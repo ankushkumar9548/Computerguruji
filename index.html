@@ -1,126 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankush Sir | Full Subject Library</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root { --primary: #ff9800; --bg: #050505; --card: #121212; --text: #fff; }
-        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
-        body { background: var(--bg); color: var(--text); }
-        
-        nav { background: #000; padding: 15px 5%; position: sticky; top:0; z-index: 1000; border-bottom: 2px solid var(--primary); display: flex; justify-content: space-between; align-items: center; }
-        .logo { color: var(--primary); font-weight: bold; font-size: 1.5rem; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Guruji | Digital Library</title>
 
-        header { text-align: center; padding: 60px 20px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1350&q=80'); background-size: cover; border-bottom: 1px solid #333; }
-        header h1 { font-size: 2.8rem; color: var(--primary); margin-bottom: 10px; }
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        .container { max-width: 1200px; margin: auto; padding: 20px; }
-        
-        /* Section Styling */
-        .class-box { margin-bottom: 60px; }
-        .class-title { 
-            background: var(--primary); color: #000; padding: 12px 30px; 
-            border-radius: 50px; display: inline-block; font-weight: 800;
-            margin-bottom: 30px; box-shadow: 0 5px 15px rgba(255,152,0,0.3);
-        }
+<style>
+:root{
+--primary:#ff9800;
+--bg:#050505;
+--card:#121212;
+--text:#ffffff;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins, sans-serif;
+}
+body{
+background:var(--bg);
+color:var(--text);
+}
 
-        .grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 20px; 
-        }
+/* NAVBAR */
+nav{
+background:#000;
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:2px solid var(--primary);
+position:sticky;
+top:0;
+z-index:1000;
+}
+.logo{
+font-size:1.5rem;
+font-weight:bold;
+color:var(--primary);
+}
 
-        .card { 
-            background: var(--card); border: 1px solid #222; padding: 25px; 
-            border-radius: 15px; transition: 0.4s; text-align: center;
-        }
-        .card:hover { border-color: var(--primary); transform: translateY(-8px); background: #1a1a1a; }
-        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; display: block; }
-        .card h3 { font-size: 1.1rem; margin-bottom: 15px; height: 40px; }
-        
-        .dl-btn { 
-            display: block; color: var(--text); text-decoration: none; 
-            font-size: 0.8rem; border: 1px solid #444; padding: 8px; border-radius: 5px;
-            transition: 0.3s;
-        }
-        .dl-btn:hover { background: var(--primary); color: #000; border-color: var(--primary); }
+/* HEADER */
+header{
+text-align:center;
+padding:60px 20px;
+background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),
+url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
+background-size:cover;
+}
+header h1{
+font-size:2.6rem;
+color:var(--primary);
+margin-bottom:10px;
+}
 
-        footer { text-align: center; padding: 40px; background: #000; border-top: 1px solid #222; margin-top: 50px; }
-        .yt-link { color: #ff0000; text-decoration: none; font-weight: bold; }
-    </style>
+/* MAIN */
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+.class-box{
+margin-bottom:60px;
+}
+.class-title{
+background:var(--primary);
+color:#000;
+padding:12px 30px;
+border-radius:50px;
+font-weight:800;
+display:inline-block;
+margin-bottom:30px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+/* CARD */
+.card{
+background:var(--card);
+border:1px solid #222;
+padding:25px;
+border-radius:15px;
+text-align:center;
+transition:.4s;
+}
+.card:hover{
+transform:translateY(-8px);
+border-color:var(--primary);
+}
+.card i{
+font-size:2.5rem;
+color:var(--primary);
+margin-bottom:10px;
+}
+.card h3{
+font-size:1.1rem;
+margin-bottom:12px;
+}
+
+/* BUTTONS */
+.dl-btn{
+display:block;
+margin-bottom:8px;
+text-decoration:none;
+color:#fff;
+font-size:.8rem;
+border:1px solid #444;
+padding:8px;
+border-radius:6px;
+transition:.3s;
+}
+.notes{border-color:#4caf50}
+.exercise{border-color:#2196f3}
+.practice{border-color:#ff5722}
+.notes:hover{background:#4caf50;color:#000}
+.exercise:hover{background:#2196f3;color:#000}
+.practice:hover{background:#ff5722;color:#000}
+
+/* FOOTER */
+footer{
+background:#000;
+padding:40px;
+text-align:center;
+border-top:1px solid #222;
+margin-top:40px;
+}
+.yt-link{
+color:#ff0000;
+text-decoration:none;
+font-weight:bold;
+}
+</style>
 </head>
+
 <body>
 
+<!-- NAV -->
 <nav>
-    <div class="logo">COMPUTER GURUJI <span style="color:white">LIBRARY</span></div>
-    <div style="font-size: 0.9rem;">Ankush Sir | MCA, M.Tech (P)</div>
+<div class="logo">COMPUTER GURUJI <span style="color:white">LIBRARY</span></div>
+<div>Ankush Sir | MCA, M.Tech</div>
 </nav>
 
+<!-- HEADER -->
 <header>
-    <h1 data-aos="zoom-in">Subject-Wise Digital Notes</h1>
-    <p data-aos="fade-up">Select your class and get high-quality PDF study material</p>
+<h1 data-aos="zoom-in">Class 9–12 Digital Study Library</h1>
+<p data-aos="fade-up">Notes • Exercises • Practice</p>
 </header>
 
 <div class="container">
 
-    <section class="class-box">
-        <div class="class-title" data-aos="fade-right"><i class="fas fa-graduation-cap"></i> CLASS 12 (Board Prep)</div>
-        <div class="grid">
-            <div class="card" data-aos="fade-up"><i class="fab fa-python"></i><h3>Computer Science</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-atom"></i><h3>Physics</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-flask"></i><h3>Chemistry</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-calculator"></i><h3>Mathematics</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="400"><i class="fas fa-dna"></i><h3>Biology</h3><a href="#" class="dl-btn">Download PDF</a></div>
-        </div>
-    </section>
+<!-- ================= CLASS 9 ================= -->
+<section class="class-box">
+<div class="class-title" style="background:#3f51b5;color:#fff">
+<i class="fas fa-school"></i> CLASS 9
+</div>
+<div class="grid">
 
-    <section class="class-box">
-        <div class="class-title" data-aos="fade-right" style="background: #4caf50; color:white;"><i class="fas fa-book"></i> CLASS 11</div>
-        <div class="grid">
-            <div class="card" data-aos="fade-up"><i class="fas fa-code"></i><h3>CS Fundamentals</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-magnet"></i><h3>Physics</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-vial"></i><h3>Chemistry</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-square-root-alt"></i><h3>Maths</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="400"><i class="fas fa-language"></i><h3>English Core</h3><a href="#" class="dl-btn">Download PDF</a></div>
-        </div>
-    </section>
+<div class="card"><i class="fas fa-laptop-code"></i><h3>IT (402)</h3>
+<a class="dl-btn notes">📘 Notes</a>
+<a class="dl-btn exercise">✍️ Exercises</a>
+<a class="dl-btn practice">🔁 Practice</a></div>
 
-    <section class="class-box">
-        <div class="class-title" data-aos="fade-right" style="background: #2196f3; color:white;"><i class="fas fa-school"></i> CLASS 9 & 10</div>
-        <div class="grid">
-            <div class="card" data-aos="fade-up"><i class="fas fa-laptop-code"></i><h3>IT (Code 402)</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-microscope"></i><h3>Science</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-divide"></i><h3>Maths</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-globe"></i><h3>S. Science</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="fade-up" data-aos-delay="400"><i class="fas fa-pen-nib"></i><h3>Hindi/English</h3><a href="#" class="dl-btn">Download PDF</a></div>
-        </div>
-    </section>
+<div class="card"><i class="fas fa-microscope"></i><h3>Science</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
 
-    <section class="class-box">
-        <div class="class-title" data-aos="fade-right" style="background: #e91e63; color:white;"><i class="fas fa-university"></i> DEGREE (BCA/MCA/M.TECH)</div>
-        <div class="grid">
-            <div class="card" data-aos="zoom-in"><i class="fab fa-java"></i><h3>Advanced Java</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-database"></i><h3>SQL & RDBMS</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-project-diagram"></i><h3>Data Structures</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-drafting-compass"></i><h3>AutoCAD 2D/3D</h3><a href="#" class="dl-btn">Download PDF</a></div>
-            <div class="card" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-file-invoice-dollar"></i><h3>Tally Prime</h3><a href="#" class="dl-btn">Download PDF</a></div>
-        </div>
-    </section>
+<div class="card"><i class="fas fa-calculator"></i><h3>Mathematics</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-globe"></i><h3>Social Science</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-book"></i><h3>English</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+</div>
+</section>
+
+<!-- ================= CLASS 10 ================= -->
+<section class="class-box">
+<div class="class-title" style="background:#009688;color:#fff">
+<i class="fas fa-school"></i> CLASS 10
+</div>
+<div class="grid">
+
+<div class="card"><i class="fas fa-laptop-code"></i><h3>IT (402)</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-atom"></i><h3>Science</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-square-root-alt"></i><h3>Mathematics</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-globe-asia"></i><h3>Social Science</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-pen-nib"></i><h3>English</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+</div>
+</section>
+
+<!-- ================= CLASS 11 ================= -->
+<section class="class-box">
+<div class="class-title" style="background:#4caf50;color:#fff">
+<i class="fas fa-book"></i> CLASS 11
+</div>
+<div class="grid">
+
+<div class="card"><i class="fas fa-code"></i><h3>Computer Science</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-magnet"></i><h3>Physics</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-vial"></i><h3>Chemistry</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-calculator"></i><h3>Mathematics</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-language"></i><h3>English</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+</div>
+</section>
+
+<!-- ================= CLASS 12 ================= -->
+<section class="class-box">
+<div class="class-title">
+<i class="fas fa-graduation-cap"></i> CLASS 12
+</div>
+<div class="grid">
+
+<div class="card"><i class="fab fa-python"></i><h3>Computer Science</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-atom"></i><h3>Physics</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-flask"></i><h3>Chemistry</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-calculator"></i><h3>Mathematics</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+<div class="card"><i class="fas fa-dna"></i><h3>Biology</h3>
+<a class="dl-btn notes"></a><a class="dl-btn exercise"></a><a class="dl-btn practice"></a></div>
+
+</div>
+</section>
 
 </div>
 
 <footer>
-    <p>Educator: <strong>Ankush Kumar</strong></p>
-    <p>Visit YouTube Channel: <a href="https://www.youtube.com/@computer_guruji" class="yt-link">@computer_guruji</a></p>
-    <p style="margin-top: 15px; opacity: 0.6;">© 2026 Student Library | Made for Learning</p>
+<p>Educator: <strong>Ankush Kumar</strong></p>
+<p>YouTube: <a href="https://www.youtube.com/@computer_guruji" class="yt-link">@computer_guruji</a></p>
+<p style="opacity:.6;margin-top:10px">© 2026 Digital Study Library</p>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({ duration: 800, once: true });
-</script>
+<script>AOS.init({duration:800,once:true});</script>
 
 </body>
 </html>
