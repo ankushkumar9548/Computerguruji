@@ -1,394 +1,731 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Computer Guruji | Digital Library</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Guruji | Digital Library</title>
 
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<style>
-:root{
---primary:#ff9800;
---bg:#050505;
---card:#121212;
---text:#ffffff;
-}
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins, sans-serif;
-}
-body{
-background:var(--bg);
-color:var(--text);
-}
+  <style>
+    :root {
+      --primary: #ff9800;
+      --bg: #050505;
+      --card: #121212;
+      --text: #ffffff;
+    }
 
-/* NAVBAR */
-nav{
-background:#000;
-padding:15px 5%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-border-bottom:2px solid var(--primary);
-position:sticky;
-top:0;
-z-index:1000;
-}
-.logo{
-font-size:1.5rem;
-font-weight:bold;
-color:var(--primary);
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Poppins, sans-serif;
+    }
 
-/* HEADER */
-header{
-text-align:center;
-padding:60px 20px;
-background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),
-url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
-background-size:cover;
-}
-header h1{
-font-size:2.6rem;
-color:var(--primary);
-margin-bottom:10px;
-}
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
 
-/* MAIN */
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
-.class-box{
-margin-bottom:60px;
-}
-.class-title{
-background:var(--primary);
-color:#000;
-padding:12px 30px;
-border-radius:50px;
-font-weight:800;
-display:inline-block;
-margin-bottom:30px;
-}
+    /* NAVBAR */
+    nav {
+      background: #000;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--primary);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
 
-/* CARD */
-.card{
-background:var(--card);
-border:1px solid #222;
-padding:25px;
-border-radius:15px;
-text-align:center;
-transition:.4s;
-}
-.card:hover{
-transform:translateY(-8px);
-border-color:var(--primary);
-}
-.card i{
-font-size:2.5rem;
-color:var(--primary);
-margin-bottom:10px;
-}
-.card h3{
-font-size:1.1rem;
-margin-bottom:12px;
-}
+    }
 
-/* BUTTONS */
-.dl-btn{
-display:block;
-margin-bottom:8px;
-text-decoration:none;
-color:#fff;
-font-size:.8rem;
-border:1px solid #444;
-padding:8px;
-border-radius:6px;
-transition:.3s;
-cursor: pointer;
-}
-.notes{border-color:#4caf50}
-.exercise{border-color:#2196f3}
-.practice{border-color:#ff5722}
-.notes:hover{background:#4caf50;color:#000}
-.exercise:hover{background:#2196f3;color:#000}
-.practice:hover{background:#ff5722;color:#000}
 
-/* FOOTER */
-footer{
-background:#000;
-padding:40px;
-text-align:center;
-border-top:1px solid #222;
-margin-top:40px;
-}
-.yt-link{
-color:#ff0000;
-text-decoration:none;
-font-weight:bold;
-}
-</style>
+    .text-animation {
+      font-size: 40px;
+      font-family: monospace;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid black;
+      width: 0;
+      animation: typing 5s steps(24) infinite,
+        blink 0.7s infinite;
+    }
+
+    @keyframes typing {
+      0% {
+        width: 0;
+      }
+
+      70% {
+        width: 24ch;
+      }
+
+      100% {
+        width: 24ch;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)),
+        url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
+      background-size: cover;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    /* MAIN */
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .class-box {
+      margin-bottom: 60px;
+    }
+
+    .class-title {
+      background: var(--primary);
+      color: #000;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 800;
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    /* CARD */
+    .card {
+      background: var(--card);
+      border: 1px solid #222;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      transition: .4s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+    }
+
+    .card i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    /* BUTTONS */
+    .dl-btn {
+      display: block;
+      margin-bottom: 8px;
+      text-decoration: none;
+      color: #fff;
+      font-size: .8rem;
+      border: 1px solid #444;
+      padding: 8px;
+      border-radius: 6px;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .notes {
+      border-color: #4caf50
+    }
+
+    .exercise {
+      border-color: #2196f3
+    }
+
+    .practice {
+      border-color: #ff5722
+    }
+
+    .notes:hover {
+      background: #4caf50;
+      color: #000
+    }
+
+    .exercise:hover {
+      background: #2196f3;
+      color: #000
+    }
+
+    .practice:hover {
+      background: #ff5722;
+      color: #000
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      padding: 40px;
+      text-align: center;
+      border-top: 1px solid #222;
+      margin-top: 40px;
+    }
+
+    .yt-link {
+      color: #ff0000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
 
-<nav>
-<div class="logo">COMPUTER GURUJI <span style="color:white">LIBRARY</span></div>
-<div>Ankush Sir | MCA, M.Tech</div>
-</nav>
+  <nav>
+    <div class="logo text-animation ">COMPUTER GURUJI <span style="color:white">LIBRARY</span></div>
+    <div>Ankush Sir | MCA, M.Tech Contact - +91-9568326772</div>
+  </nav>
 
-<header>
-<h1 data-aos="zoom-in">Class 9–12 Digital Study Library</h1>
-<p data-aos="fade-up">Notes • Exercises • Practice</p>
-</header>
+  <header>
+    <h1 data-aos="zoom-in">Class 9–12 Digital Study Library</h1>
+    <p data-aos="fade-up">Notes • Exercises • Practice</p>
+  </header>
 
-<div class="container">
+  <div class="container">
 
-<section class="class-box">
-<div class="class-title" style="background:#3f51b5;color:#fff">
-<i class="fas fa-school"></i> CLASS 9
-</div>
-<div class="grid">
+    <section class="class-box">
+      <div class="class-title" style="background:#3f51b5;color:#fff">
+        <i class="fas fa-school"></i> CLASS 9
+      </div>
+      <div class="grid">
 
-<div class="card"><i class="fas fa-laptop-code"></i><h3>IT (402)</h3>
-<a href="#" class="dl-btn notes">📘 Notes (PDF)</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-laptop-code"></i>
+          <h3>IT (402)</h3>
+          <a href="#" class="dl-btn notes">📘 Notes (PDF)</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-microscope"></i><h3>Science</h3>
-<a href="https://drive.google.com/file/d/1PdRNFDvLyMpUPRR2OIrYI4NQmSZ2BVVb/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-microscope"></i>
+          <h3>Science</h3>
+          <a href="https://drive.google.com/file/d/1PdRNFDvLyMpUPRR2OIrYI4NQmSZ2BVVb/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-calculator"></i><h3>Mathematics</h3>
-<a href="https://drive.google.com/file/d/1AE14mLjwy4thfxg0kHD6zcjiSRLu6lsg/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-calculator"></i>
+          <h3>Mathematics</h3>
+          <a href="https://drive.google.com/file/d/1AE14mLjwy4thfxg0kHD6zcjiSRLu6lsg/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-globe"></i><h3>Social Science</h3>
-<a href="https://drive.google.com/file/d/1fp2doUMrVe0mblxebntB7E3khawJPBA4/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-globe"></i>
+          <h3>Social Science</h3>
+          <a href="https://drive.google.com/file/d/1fp2doUMrVe0mblxebntB7E3khawJPBA4/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-book"></i><h3>English</h3>
-<a href="https://drive.google.com/file/d/1dwlDlCHkNWCPPv4bNZs9ArJ6VFWYaNv_/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-book"></i>
+          <h3>English</h3>
+          <a href="https://drive.google.com/file/d/1dwlDlCHkNWCPPv4bNZs9ArJ6VFWYaNv_/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
 
-<div class="card"><i class="fas fa-book"></i><h3>Hindi</h3>
-<a href="https://drive.google.com/file/d/12sJ3NxeufGRg97v2VDUXH3aLnMbakfuU/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-book"></i>
+          <h3>Hindi</h3>
+          <a href="https://drive.google.com/file/d/12sJ3NxeufGRg97v2VDUXH3aLnMbakfuU/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-book"></i><h3>SANSKRIT </h3>
-<a href="https://drive.google.com/file/d/1q11b5TvH9g5L8d2T9EBIfULlaWRSrSmv/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-book"></i>
+          <h3>SANSKRIT </h3>
+          <a href="https://drive.google.com/file/d/1q11b5TvH9g5L8d2T9EBIfULlaWRSrSmv/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-book"></i><h3>Subject name</h3>
-<a href="" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-book"></i>
+          <h3>Subject name</h3>
+          <a href="" class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-book"></i><h3>Subject name</h3>
-<a href="" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-book"></i>
+          <h3>Subject name</h3>
+          <a href="" class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-</div>
-</section>
+      </div>
+    </section>
 
-<section class="class-box">
-<div class="class-title" style="background:#009688;color:#fff">
-<i class="fas fa-school"></i> CLASS 10
-</div>
-<div class="grid">
+    <section class="class-box">
+      <div class="class-title" style="background:#009688;color:#fff">
+        <i class="fas fa-school"></i> CLASS 10
+      </div>
+      <div class="grid">
 
-<div class="card"><i class="fas fa-laptop-code"></i><h3>IT (402)</h3>
-<a href="#" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-laptop-code"></i>
+          <h3>IT (402)</h3>
+          <a href="#" class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-atom"></i><h3>Science</h3>
-<a href="#" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-atom"></i>
+          <h3>ARTIFICIAL INTELLIGENCE</h3>
+          <a href="https://drive.google.com/file/d/1QiDajwiHufPWvaEYy6P41jZhyBSckcPA/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-square-root-alt"></i><h3>Mathematics</h3>
-<a href="#" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-square-root-alt"></i>
+          <h3>Mathematics</h3>
+          <a href="https://drive.google.com/file/d/1LPQr27Vjjm-7Z22VXyDCTLK2qEO8VTZN/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-globe-asia"></i><h3>Social Science</h3>
-<a href="#" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-globe-asia"></i>
+          <h3>SANSKRIT</h3>
+          <a href="https://drive.google.com/file/d/1Ob8TAgpRiMZwu7ZhuLIWMU9BCpXl2K9E/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-pen-nib"></i><h3>English</h3>
-<a href="#" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-globe-asia"></i>
+          <h3>SCIENCE</h3>
+          <a href="https://drive.google.com/file/d/1simwRd1sFcufPXk9m8PUXsZvfLqA1ydr/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-</div>
-</section>
+        <div class="card"><i class="fas fa-globe-asia"></i>
+          <h3>Social Science</h3>
+          <a href="https://drive.google.com/file/d/1eNd-gIIV68iHtm0Z1huEkNrikbt881Em/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<section class="class-box">
-<div class="class-title" style="background:#4caf50;color:#fff">
-<i class="fas fa-book"></i> CLASS 11
-</div>
-<div class="grid">
+        <div class="card"><i class="fas fa-globe-asia"></i>
+          <h3>Social</h3>
+          <a href="#" class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-code"></i><h3>Computer Science</h3>
-<a href="https://drive.google.com/file/d/1iIRGwQHpEMsRaVOIVa5RDz5Y3vBnMgTV/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-globe-asia"></i>
+          <h3>English</h3>
+          <a href="https://drive.google.com/file/d/1IRclf5tVS-u6k6Ia3K6Kdk5-PfbaZKIZ/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-magnet"></i><h3>Physics</h3>
-<a href="https://drive.google.com/file/d/1IVtmEL20qmQidmoH413R6HCEvW6Er8wF/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
 
-<div class="card"><i class="fas fa-vial"></i><h3>Chemistry</h3>
-<a href="https://drive.google.com/file/d/112d9iyAZmzJJ4fZbxtqq9ELCXUI3XpNZ/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-pen-nib"></i>
+          <h3>Hindi</h3>
+          <a href="https://drive.google.com/file/d/1d8K7ZCWXffM2Lgy205WPhIg2dn0JX82r/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-calculator"></i><h3>Mathematics</h3>
-<a href="https://drive.google.com/file/d/1BDE7cO_qqmentm7R-EAksAGSFV-4T1XK/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
 
-<div class="card"><i class="fas fa-language"></i><h3>English</h3>
-<a href="https://drive.google.com/file/d/1qBT73rYpAHgb0mKWMxPQIKfnUuBbCl1c/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <!-- <div class="card"><i class="fas fa-globe-asia"></i>
+          <h3>Social</h3>
+          <a href="#" class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-language"></i><h3>Economics</h3>
-<a href="https://drive.google.com/file/d/1G5nDD6CQtt6PVDb-z5nsqOXB1JIZYyS2/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-globe-asia"></i>
+          <h3>Social</h3>
+          <a href="#" class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div> -->
+      </div>
+    </section>
 
-<div class="card"><i class="fas fa-language"></i><h3>HISTORY</h3>
-<a href="https://drive.google.com/file/d/1eiWpMyfNWdCelYhXAkDT8wBN6gfasrEV/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+    <section class="class-box">
+      <div class="class-title" style="background:#4caf50;color:#fff">
+        <i class="fas fa-book"></i> CLASS 11
+      </div>
+      <div class="grid">
 
-<div class="card"><i class="fas fa-language"></i><h3>Sociology</h3>
-<a href="https://drive.google.com/file/d/1GSBULem2ZvkqF7h1g5sfPpKqrKuZ2xms/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-code"></i>
+          <h3>Computer Science</h3>
+          <a href="https://drive.google.com/file/d/1iIRGwQHpEMsRaVOIVa5RDz5Y3vBnMgTV/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-language"></i><h3>Political Science</h3>
-<a href="https://drive.google.com/file/d/1L3N6W49e2iGhJddxNlE84tnhsbXrLzGb/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>Physics</h3>
+          <a href="https://drive.google.com/file/d/1IVtmEL20qmQidmoH413R6HCEvW6Er8wF/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-language"></i><h3>Geography</h3>
-<a href="https://drive.google.com/file/d/1qY95isx9Gk5HBOke6VKidQdAbfs_0MMs/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-vial"></i>
+          <h3>Chemistry</h3>
+          <a href="https://drive.google.com/file/d/112d9iyAZmzJJ4fZbxtqq9ELCXUI3XpNZ/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-language"></i><h3>BIOLOGY-</h3>
-<a href="https://drive.google.com/file/d/1dMxfLTA15Tt37XsjFjMdmvg1a_X4b8IS/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-calculator"></i>
+          <h3>Mathematics</h3>
+          <a href="https://drive.google.com/file/d/1BDE7cO_qqmentm7R-EAksAGSFV-4T1XK/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-language"></i><h3>Accountancy</h3>
-<a href="https://drive.google.com/file/d/14prC-RfLQUGgWpISuqQsTe_gi97YioR0/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-language"></i>
+          <h3>English</h3>
+          <a href="https://drive.google.com/file/d/1qBT73rYpAHgb0mKWMxPQIKfnUuBbCl1c/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-language"></i><h3>Business Studies</h3>
-<a href="https://drive.google.com/file/d/1nsOW1scoskHO-bYns7S7gx0Zv0mVteZG/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-language"></i>
+          <h3>Economics</h3>
+          <a href="https://drive.google.com/file/d/1G5nDD6CQtt6PVDb-z5nsqOXB1JIZYyS2/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-language"></i><h3>Informatics Practices</h3>
-<a href="https://drive.google.com/file/d/1q40qdS68VTMP39wqkbJ0vTCyQHji51dy/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-language"></i>
+          <h3>HISTORY</h3>
+          <a href="https://drive.google.com/file/d/1eiWpMyfNWdCelYhXAkDT8wBN6gfasrEV/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-language"></i><h3>APPLIED MATHEMATICS</h3>
-<a href="https://drive.google.com/file/d/1dDGDBUVPLkzr5cFrmUuKHVzp4hCEaC9_/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-language"></i>
+          <h3>Sociology</h3>
+          <a href="https://drive.google.com/file/d/1GSBULem2ZvkqF7h1g5sfPpKqrKuZ2xms/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-language"></i><h3>हिंदी कोर</h3>
-<a href="https://drive.google.com/file/d/1keieMqpVqdjZilO2BFX1SLZg3sGELzhe/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-language"></i>
+          <h3>Political Science</h3>
+          <a href="https://drive.google.com/file/d/1L3N6W49e2iGhJddxNlE84tnhsbXrLzGb/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-language"></i><h3>BIOTECH</h3>
-<a href="https://drive.google.com/file/d/169VoUBDHTYVf9Q0QKyd-rKV_PufZ_Kzs/view?usp=drive_link" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-language"></i>
+          <h3>Geography</h3>
+          <a href="https://drive.google.com/file/d/1qY95isx9Gk5HBOke6VKidQdAbfs_0MMs/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<!-- <div class="card"><i class="fas fa-language"></i><h3>English</h3>
+        <div class="card"><i class="fas fa-language"></i>
+          <h3>BIOLOGY-</h3>
+          <a href="https://drive.google.com/file/d/1dMxfLTA15Tt37XsjFjMdmvg1a_X4b8IS/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-language"></i>
+          <h3>Accountancy</h3>
+          <a href="https://drive.google.com/file/d/14prC-RfLQUGgWpISuqQsTe_gi97YioR0/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-language"></i>
+          <h3>Business Studies</h3>
+          <a href="https://drive.google.com/file/d/1nsOW1scoskHO-bYns7S7gx0Zv0mVteZG/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-language"></i>
+          <h3>Informatics Practices</h3>
+          <a href="https://drive.google.com/file/d/1q40qdS68VTMP39wqkbJ0vTCyQHji51dy/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-language"></i>
+          <h3>APPLIED MATHEMATICS</h3>
+          <a href="https://drive.google.com/file/d/1dDGDBUVPLkzr5cFrmUuKHVzp4hCEaC9_/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-language"></i>
+          <h3>हिंदी कोर</h3>
+          <a href="https://drive.google.com/file/d/1keieMqpVqdjZilO2BFX1SLZg3sGELzhe/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-language"></i>
+          <h3>BIOTECH</h3>
+          <a href="https://drive.google.com/file/d/169VoUBDHTYVf9Q0QKyd-rKV_PufZ_Kzs/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <!-- <div class="card"><i class="fas fa-language"></i><h3>English</h3>
 <a href="#" class="dl-btn notes">📘 Notes</a>
 <a href="#" class="dl-btn exercise">✍️ Exercises</a>
 <a href="#" class="dl-btn practice">🔁 Practice</a></div> -->
 
-</div>
-</section>
+      </div>
+    </section>
 
-<section class="class-box">
-<div class="class-title">
-<i class="fas fa-graduation-cap"></i> CLASS 12
-</div>
-<div class="grid">
+    <section class="class-box">
+      <div class="class-title">
+        <i class="fas fa-graduation-cap"></i> CLASS 12
+      </div>
+      <div class="grid">
 
-<div class="card"><i class="fab fa-python"></i><h3>Computer Science</h3>
-<a href="#" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-code"></i>
+          <h3>Computer Science</h3>
+          <a href="https://drive.google.com/file/d/1Wf0qYrK88lhrPYt8am4H3L3JTL1YwrWI/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-atom"></i><h3>Physics</h3>
-<a href="#" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>हिंदी कोर</h3>
+          <a href="" class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-flask"></i><h3>Chemistry</h3>
-<a href="#" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>Biotechnology</h3>
+          <a href="https://drive.google.com/file/d/1_0LKejfO1xKcXs3-9wOUb1w5TPt7uKUB/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-calculator"></i><h3>Mathematics</h3>
-<a href="#" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>ENGLISH</h3>
+          <a href="https://drive.google.com/file/d/1UZIAtRkmjq-3RPm4XY7lDKzsK3wrOJF1/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<div class="card"><i class="fas fa-dna"></i><h3>Biology</h3>
-<a href="#" class="dl-btn notes">📘 Notes</a>
-<a href="#" class="dl-btn exercise">✍️ Exercises</a>
-<a href="#" class="dl-btn practice">🔁 Practice</a></div>
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>Informatics Practices</h3>
+          <a href="https://drive.google.com/file/d/1522lIurUTN_sudok3CXrqjvRmgMV7Dc3/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-</div>
-</section>
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>APPLIED MATHEMATICS</h3>
+          <a href="https://drive.google.com/file/d/1tuE7z-5xMMbiVp9LwMmWYd4DxFgKZD6U/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-</div>
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>MATHEMATICS</h3>
+          <a href="https://drive.google.com/file/d/1ydsVUzw0p23LyAZP6Ge025JyBIEiHWcV/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<footer>
-<p>Educator: <strong>Ankush Kumar</strong></p>
-<p>YouTube: <a href="https://www.youtube.com/@computer_guruji" class="yt-link">@computer_guruji</a></p>
-<p style="opacity:.6;margin-top:10px">© 2026 Digital Study Library</p>
-</footer>
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>Economics</h3>
+          <a href="https://drive.google.com/file/d/1Cjh9XVozdS-GoOuyCn99wO6HUggXUbiE/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({duration:800,once:true});</script>
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>HISTORY</h3>
+          <a href="https://drive.google.com/file/d/1iveZQAtvPjLLDVFR4KbeOkBdgw07JMDp/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>Physical Education</h3>
+          <a href="https://drive.google.com/file/d/1AG3Zo23zLNZVwyKjy0R3484ddvC9bYgH/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>Physics</h3>
+          <a href="https://drive.google.com/file/d/1gRSXJQtNYLO-Ai03Obw5uxzgT2xbzfGU/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>Political Science</h3>
+          <a href="https://drive.google.com/file/d/1ALfRBP438aAaz5-yn4oIKs_WPXIq0fMW/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>Sociology</h3>
+          <a href="https://drive.google.com/file/d/11EtBhSHg6rJTxLL2m_PKMapwA93CuHTT/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>Geography</h3>
+          <a href="https://drive.google.com/file/d/16vZ5dBQj4r5MTPuTeCfHCEvBMIBqVjD9/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>BIOLOGY</h3>
+          <a href="https://drive.google.com/file/d/1uc-azwToC9Uk0G_8Xlk-vgifJEMvrsjP/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>CHEMISTRY</h3>
+          <a href="https://drive.google.com/file/d/1HaOdjNpBzvpFmsFqDDMgFKDSiiSwRgzG/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>Accountancy</h3>
+          <a href="https://drive.google.com/file/d/1Tgtz2AwEjTsmgyWEV2s70dw1oKmxBnsd/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>Business Studies</h3>
+          <a href="https://drive.google.com/file/d/12dnkxZcyclHkzdiGg_jvnSzKNA6dbpoQ/view?usp=drive_link"
+            class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <!-- <div class="card"><i class="fas fa-magnet"></i>
+          <h3>Political</h3>
+          <a href="" class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div>
+
+        <div class="card"><i class="fas fa-magnet"></i>
+          <h3>Political</h3>
+          <a href="" class="dl-btn notes">📘 Notes</a>
+          <a href="#" class="dl-btn exercise">✍️ Exercises</a>
+          <a href="#" class="dl-btn practice">🔁 Practice</a>
+        </div> -->
+
+
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Educator: <strong>Ankush Kumar</strong></p>
+    <p>YouTube: <a href="https://www.youtube.com/@computer_guruji" class="yt-link">@computer_guruji</a></p>
+    <p style="opacity:.6;margin-top:10px">© 2026 Digital Study Library</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 800, once: true });</script>
 
 </body>
+
 </html>
