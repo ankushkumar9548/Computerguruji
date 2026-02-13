@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Guruji Library</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(45deg, #0a3d62, #1e6fa3);
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+
+    .header-left {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .header-right {
+      font-size: 15px;
+    }
+
+    /* SEARCH BAR */
+    .search-box {
+      text-align: center;
+      background: white;
+      padding: 15px;
+    }
+
+    .search-box input {
+      width: 60%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    /* CONTAINER */
+    .container {
+      width: 90%;
+      margin: auto;
+      margin-top: 20px;
+    }
+
+    .class-box {
+      background: white;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .class-title {
+      padding: 15px;
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .class9 {
+      background: #3498db;
+    }
+
+    .class10 {
+      background: #27ae60;
+    }
+
+    .class11 {
+      background: #e67e22;
+    }
+
+    .class12 {
+      background: #e74c3c;
+    }
+
+    .arrow {
+      transition: 0.3s;
+    }
+
+    .arrow.rotate {
+      transform: rotate(180deg);
+    }
+
+    /* CONTENT */
+    .content {
+      display: none;
+      padding: 20px;
+      animation: fade 0.4s ease-in-out;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 15px;
+      margin: 8px;
+      background: #0a3d62;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: #f39c12;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #0a3d62;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-left">💻 COMPUTER GURUJI LIBRARY</div>
+    <div class="header-right">
+      Ankush Sir | MCA, M.Tech | Contact: +91-9568326772
+    </div>
+  </header>
+
+  <!-- SEARCH BAR -->
+  <div class="search-box">
+    <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search class, notes or papers...">
+  </div>
+
+  <div class="container">
+
+    <!-- CLASS 9 -->
+    <div class="class-box">
+      <div class="class-title class9" onclick="toggleContent(this,'c9')">
+        Class 9 – IT 402
+        <span class="arrow">▼</span>
+      </div>
+      <div id="c9" class="content">
+        <a href="#" class="button">Unit 1 Notes ⬇</a>
+        <a href="#" class="button">Unit 2 Notes ⬇</a>
+      </div>
+    </div>
+
+    <!-- CLASS 10 -->
+    <div class="class-box">
+      <div class="class-title class10" onclick="toggleContent(this,'c10')">
+        Class 10 – IT 402
+        <span class="arrow">▼</span>
+      </div>
+      <div id="c10" class="content">
+        <a href="#" class="button">Employability Skills ⬇</a>
+      </div>
+    </div>
+
+    <!-- CLASS 11 -->
+    <div class="class-box">
+      <div class="class-title class11" onclick="toggleContent(this,'c11')">
+        Class 11 – Computer Science
+        <span class="arrow">▼</span>
+      </div>
+      <div id="c11" class="content">
+        <a href="#" class="button">Data Representation ⬇</a>
+      </div>
+    </div>
+
+    <!-- CLASS 12 -->
+    <div class="class-box">
+      <div class="class-title class12" onclick="toggleContent(this,'c12')">
+        Class 12 – Computer Science
+        <span class="arrow">▼</span>
+      </div>
+      <div id="c12" class="content">
+        <a href="#" class="button">Python ⬇</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 COMPUTER GURUJI LIBRARY
+  </footer>
+
+  <script>
+
+    function toggleContent(element, id) {
+
+      let allContent = document.querySelectorAll(".content");
+      let allArrow = document.querySelectorAll(".arrow");
+
+      allContent.forEach(c => {
+        if (c.id !== id) c.style.display = "none";
+      });
+
+      allArrow.forEach(a => {
+        if (a !== element.querySelector(".arrow"))
+          a.classList.remove("rotate");
+      });
+
+      let content = document.getElementById(id);
+      let arrow = element.querySelector(".arrow");
+
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        arrow.classList.remove("rotate");
+      } else {
+        content.style.display = "block";
+        arrow.classList.add("rotate");
+      }
+    }
+
+    /* SEARCH FUNCTION */
+    function searchFunction() {
+      let input = document.getElementById("searchInput").value.toLowerCase();
+      let boxes = document.querySelectorAll(".class-box");
+
+      boxes.forEach(box => {
+        let text = box.innerText.toLowerCase();
+        box.style.display = text.includes(input) ? "" : "none";
+      });
+    }
+
+  </script>
+
+</body>
+
+</html>
